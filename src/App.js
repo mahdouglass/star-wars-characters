@@ -1,5 +1,6 @@
 import './App.css';
 import {useEffect, useState} from 'react';
+import PersonComponent from './components/person.component';
 
 function App() {
   const [error, setError] = useState(null);
@@ -26,11 +27,11 @@ function App() {
   } else {
     return (
       <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            {item.name}
-          </li>
-        ))}
+        {
+          items.map(item => (
+            <PersonComponent key={item.id} person={item} />
+          ))
+        }
       </ul>
     );
   }
